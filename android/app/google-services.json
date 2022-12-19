@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682276189872",
+    "project_id": "zulu-forum",
+    "storage_bucket": "zulu-forum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682276189872:android:e2fa54653cecea8038ad75",
+        "android_client_info": {
+          "package_name": "com.company.zuluforumapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682276189872-1al33r9kppoojpvo6be3coo4h49liquo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw0Z_TIlIfcH8HXcjizKytRdsZv63k-ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682276189872-1al33r9kppoojpvo6be3coo4h49liquo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

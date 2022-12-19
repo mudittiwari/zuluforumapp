@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:zuluforumapp/Blogs.dart';
 import 'package:zuluforumapp/Donate.dart';
 import 'package:zuluforumapp/FAQ.dart';
 import 'package:zuluforumapp/about.dart';
@@ -11,8 +13,10 @@ import 'package:zuluforumapp/views/otp.dart';
 import 'package:zuluforumapp/views/register.dart';
 import 'package:zuluforumapp/views/verify.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -157,10 +161,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 title: Text('Blogs'),
-                // onTap: () {
-                //    Navigator.push(context,
-                //       MaterialPageRoute(builder: (context) => (Blogpage())));
-                // },
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => (Blogs())));
+                },
               ),
               ListTile(
                 title: Text('Register Complain'),
