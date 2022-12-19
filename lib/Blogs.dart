@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:zuluforumapp/Blogpage.dart';
 import 'package:zuluforumapp/Donate.dart';
 import 'package:zuluforumapp/FAQ.dart';
 import 'package:zuluforumapp/about.dart';
@@ -130,84 +131,94 @@ class _BlogsState extends State<Blogs> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 28.0),
-                                        child: Text(
-                                          snapshot.data!.docs[0]['title'],
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      Stack(
-                                        alignment:
-                                            AlignmentDirectional.bottomStart,
-                                        children: [
-                                          Container(
-                                            height: 200,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            child: Image.network(
-                                              snapshot.data!.docs[0]['images']
-                                                  [0],
-                                              fit: BoxFit.cover,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: ((context) => (Blogpage(
+                                              id: snapshot.data!.docs[0].id
+                                                  .toString())))));
+                                },
+                                child: Container(
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 28.0),
+                                          child: Text(
+                                            snapshot.data!.docs[0]['title'],
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional.bottomEnd,
-                                            child: Container(
-                                              height: 50,
-                                              width: 120,
-                                              color: Colors.black,
-                                              child: Center(
-                                                child: Text(
-                                                  snapshot.data!.docs[0]
-                                                      ['date'],
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
+                                        ),
+                                        Stack(
+                                          alignment:
+                                              AlignmentDirectional.bottomStart,
+                                          children: [
+                                            Container(
+                                              height: 200,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: Image.network(
+                                                snapshot.data!.docs[0]['images']
+                                                    [0],
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                          )
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 12.0),
-                                        child: Text(
-                                          snapshot.data!.docs[0]['desc']
-                                                  .toString()
-                                                  .substring(0, 300) +
-                                              '.....',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500),
+                                            Align(
+                                              alignment: AlignmentDirectional
+                                                  .bottomEnd,
+                                              child: Container(
+                                                height: 50,
+                                                width: 120,
+                                                color: Colors.black,
+                                                child: Center(
+                                                  child: Text(
+                                                    snapshot.data!.docs[0]
+                                                        ['date'],
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 4.0),
-                                        child: Text(
-                                          'Read More',
-                                          style: TextStyle(
-                                              color: Colors.blue,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 12.0),
+                                          child: Text(
+                                            snapshot.data!.docs[0]['desc']
+                                                    .toString()
+                                                    .substring(0, 300) +
+                                                '.....',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500),
+                                          ),
                                         ),
-                                      ),
-                                    ]),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 4.0),
+                                          child: Text(
+                                            'Read More',
+                                            style: TextStyle(
+                                                color: Colors.blue,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+                                      ]),
+                                ),
                               ),
                             ),
                             Padding(
@@ -220,84 +231,95 @@ class _BlogsState extends State<Blogs> {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 28.0),
-                                        child: Text(
-                                          snapshot.data!.docs[1]['title'],
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      Stack(
-                                        alignment:
-                                            AlignmentDirectional.bottomStart,
-                                        children: [
-                                          Container(
-                                            height: 200,
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            child: Image.network(
-                                              snapshot.data!.docs[1]['images']
-                                                  [0],
-                                              fit: BoxFit.cover,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: ((context) => (Blogpage(
+                                              id: snapshot
+                                                  .data!.docs[1].reference
+                                                  .toString())))));
+                                },
+                                child: Container(
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 28.0),
+                                          child: Text(
+                                            snapshot.data!.docs[1]['title'],
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional.bottomEnd,
-                                            child: Container(
-                                              height: 50,
-                                              width: 120,
-                                              color: Colors.black,
-                                              child: Center(
-                                                child: Text(
-                                                  snapshot.data!.docs[1]
-                                                      ['date'],
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
+                                        ),
+                                        Stack(
+                                          alignment:
+                                              AlignmentDirectional.bottomStart,
+                                          children: [
+                                            Container(
+                                              height: 200,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: Image.network(
+                                                snapshot.data!.docs[1]['images']
+                                                    [0],
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                          )
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 12.0),
-                                        child: Text(
-                                          snapshot.data!.docs[1]['desc']
-                                                  .toString()
-                                                  .substring(0, 300) +
-                                              '.....',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500),
+                                            Align(
+                                              alignment: AlignmentDirectional
+                                                  .bottomEnd,
+                                              child: Container(
+                                                height: 50,
+                                                width: 120,
+                                                color: Colors.black,
+                                                child: Center(
+                                                  child: Text(
+                                                    snapshot.data!.docs[1]
+                                                        ['date'],
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 4.0),
-                                        child: Text(
-                                          'Read More',
-                                          style: TextStyle(
-                                              color: Colors.blue,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 12.0),
+                                          child: Text(
+                                            snapshot.data!.docs[1]['desc']
+                                                    .toString()
+                                                    .substring(0, 300) +
+                                                '.....',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500),
+                                          ),
                                         ),
-                                      ),
-                                    ]),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 4.0),
+                                          child: Text(
+                                            'Read More',
+                                            style: TextStyle(
+                                                color: Colors.blue,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+                                      ]),
+                                ),
                               ),
                             ),
                             Padding(
